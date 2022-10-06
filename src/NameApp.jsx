@@ -8,24 +8,13 @@ const OtherValue = {
   age: 1
 };
 
-const ValueOfNote = 0;
-
-const GetName = (person) => `${person.Name} ${person.Surname}`
-
-const person = {
-  Name: 'Jose',
-  Surname: 'Rguez Hdez'
-}
-
-export const NameApp = ({ title, subTitle }) => {
+export const NameApp = ({ title, subTitle, name }) => {
  
   return (
     <Fragment>
-      <h1> {title} </h1>
-      <h2> {subTitle} </h2>
-      <h1>Jose en su curso de React</h1>
-      <p>Haciendo un fragmento y la pruebas número: { ValueOfNote } </p>
-      <p>{ GetName(person) }</p>
+      <h1>{title}</h1>
+      <h2>{subTitle}</h2>
+      <p>{ name }</p>
     </Fragment>
   )
 }
@@ -33,9 +22,10 @@ export const NameApp = ({ title, subTitle }) => {
 
 NameApp.propTypes = {
   title: PropTypes.string.isRequired,
-  subTitle: PropTypes.number.isRequired
+  subTitle: PropTypes.string.isRequired
 }
 
 NameApp.defaultProps = {
-  title: "No hay titulo"
+  //title: "No hay titulo",
+  subTitle: "No hay subtítulo"
 }
